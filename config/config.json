@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "nikolashahpazov",
+    "password": null,
+    "database": "nikolashahpazov",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "nikolashahpazov",
+    "password": null,
+    "database": "nikolashahpazov",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "nikolashahpazov",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
