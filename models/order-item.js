@@ -6,9 +6,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     classMethods: {
-      associate: (models) => {
-        OrderItem.hasOne(models.ShoeModel)
-      }
+      associate: models => OrderItem.hasOne(models.ShoeModel)
     }
   });
 
