@@ -46,7 +46,6 @@ module.exports = {
    * @param  orderId the id of the order for which the order items to be removed
    */
   getOrderItems: (req, res, next) => {
-    // note: something wrong with destructing in nodeJS
     const OrderId = parseInt(req.params.orderId, 10);
     models.OrderItem.findAll({where: {OrderId}})
       .then(data => res.json(data))
@@ -83,7 +82,6 @@ module.exports = {
    */
   createOrderItem: (req, res, next) => {
     const OrderId = parseInt(req.params.orderId, 10);
-    console.log(Object.assign({OrderId}, req.body));
     models.OrderItem.create(Object.assign({OrderId}, req.body))
       .then(data => res.json(data))
       .catch(next);
