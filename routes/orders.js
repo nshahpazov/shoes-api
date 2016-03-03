@@ -8,6 +8,6 @@ router.delete('/orders', controller.deleteAllOrders);
 router.get('/orders/:id', controller.getOrder);
 router.post('/orders/:orderId/order_items', controller.createOrderItem);
 router.get('/orders/:orderId/order_items', controller.getOrderItems);
-router.delete('/orders/:id/order_items/:itemId', controller.deleteOrderItem);
+router.delete('/orders/:orderId/order_items/:itemId', controller.deleteOrderItem);
 
 module.exports = router;

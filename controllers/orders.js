@@ -33,7 +33,12 @@ module.exports = {
       .catch(next);
   },
 
-  deleteOrderItem: (req, res, next) => {},
+  deleteOrderItem: (req, res, next) => {
+    const id = req.params.itemId;
+    models.OrderItem.destroy({where: { id }})
+      .then(data => res.json(data))
+      .catch(next);
+  },
 
   // if is with the same size, maybe just add it to the pile of that size
   createOrderItem: (req, res, next) => {

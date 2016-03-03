@@ -7,9 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.ENUM('BASKET', 'PAYED', 'DISPATCHED', 'DELIVERED')
   }, {
     classMethods: {
-      associate: function (models) {
-        Order.hasMany(models.OrderItem)
-      }
+      associate: models => Order.hasMany(models.OrderItem)
     }
   });
 
