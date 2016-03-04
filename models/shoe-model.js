@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  var ShoeModel = sequelize.define("ShoeModel", {
+  const ShoeModel = sequelize.define('ShoeModel', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     price: DataTypes.FLOAT,
@@ -26,21 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     44: DataTypes.INTEGER,
     45: DataTypes.INTEGER,
     46: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      // associate: (models) => {
-      //   ShoeModel.hasMany(models.ShoeModelItem)
-      // }
-    }
   });
-
-  ShoeModel.build({
-    name: 'very important shoe model',
-    description: 'dsdas',
-    price: 12.55
-  }, function () {
-    console.log('created');
-  });
-
   return ShoeModel;
 };

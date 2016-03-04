@@ -1,12 +1,11 @@
-"use strict";
+'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var OrderItem = sequelize.define("OrderItem", {
+  const OrderItem = sequelize.define('OrderItem', {
     size: DataTypes.INTEGER,
     count: DataTypes.INTEGER
-
   }, {
     classMethods: {
-      associate: models => OrderItem.hasOne(models.ShoeModel)
+      associate: models => OrderItem.belongsTo(models.ShoeModel)
     }
   });
 
