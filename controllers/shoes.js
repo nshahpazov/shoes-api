@@ -1,10 +1,10 @@
 const models = require('../models');
-const ShoeModel = models.ShoeModel;
+const ShoeModel = models.shoeModel;
 
 module.exports = {
 
   getAllShoeModels: (req, res, next) => {
-    ShoeModel.find()
+    ShoeModel.findAll()
       .then(data => res.json(data))
       .catch(next);
   },
