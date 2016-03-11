@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  const ShoeModel = sequelize.define('ShoeModel', {
+  const ShoeModel = sequelize.define('shoeModel', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     price: DataTypes.FLOAT,
@@ -26,6 +26,12 @@ module.exports = (sequelize, DataTypes) => {
     44: DataTypes.INTEGER,
     45: DataTypes.INTEGER,
     46: DataTypes.INTEGER
+  }, {
+    classMethods: {
+      associate: models => ShoeModel.hasOne(models.orderItem, {
+        foreignKey: 'shoeModelId'
+      })
+    }
   });
   return ShoeModel;
 };

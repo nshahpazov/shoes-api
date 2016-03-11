@@ -1,13 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const OrderItem = sequelize.define('OrderItem', {
+  const orderItem = sequelize.define('orderItem', {
     size: DataTypes.INTEGER,
     count: DataTypes.INTEGER
   }, {
     classMethods: {
-      associate: models => OrderItem.belongsTo(models.ShoeModel)
+      associate: models => orderItem.belongsTo(models.shoeModel)
     }
   });
 
-  return OrderItem;
+  return orderItem;
 };
