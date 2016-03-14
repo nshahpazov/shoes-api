@@ -67,6 +67,7 @@ module.exports = {
   },
 
   /**
+   * NOTE: IS THIS REALLY USED??!?!?!?
    * DELETES ALL order items for a particular Order (Basket)
    * @param  orderId the id of the order for which the order items to be removed
    */
@@ -83,9 +84,9 @@ module.exports = {
    * @param  orderItemId the id of the order item
    */
   deleteOrderItem: (req, res, next) => {
-    const id = req.params.itemId;
+    const id = parseInt(req.params.itemId, 10);
     orderItem.destroy({where: { id }})
-      .then(data => res.json(data))
+      .then(data => res.json(id))
       .catch(next);
   },
 
