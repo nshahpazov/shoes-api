@@ -7,7 +7,7 @@
     "lint": "node ./node_modules/eslint/bin/eslint .",
     "migrate": "node ./node_modules/sequelize-cli/bin/sequelize db:migrate",
     "migrate:undo:all": "node ./node_modules/sequelize-cli/bin/sequelize db:migrate:undo:all",
-    "test": "mocha",
+    "test": "./node_modules/.bin/mocha",
     "doc": "apidoc -i ./controllers/ -o ./apidoc/"
   },
   "dependencies": {
