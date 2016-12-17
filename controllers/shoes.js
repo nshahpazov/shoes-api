@@ -27,8 +27,4 @@ module.exports = {
       .then(data => res.json(data))
       .catch(next);
   }
-
-
-
-
 };

@@ -29,7 +29,7 @@ module.exports = {
    */
   deleteAllOrders: (req, res, next) => {
     orderItem.destroy()
-      .then(_ => order.destroy())
+      .then(() => order.destroy())
       .then(data => res.json(data))
       .catch(next);
   },
@@ -86,7 +86,7 @@ module.exports = {
   deleteOrderItem: (req, res, next) => {
     const id = parseInt(req.params.itemId, 10);
     orderItem.destroy({where: { id }})
-      .then(data => res.json(id))
+      .then(() => res.json(id))
       .catch(next);
   },
 
